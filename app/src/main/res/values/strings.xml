@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">CastilloGym</string>
+
+
+    <string name="msj_espera2">Por favor espere mientras validamos sus credenciales</string>
+    <string name="create_Account">Creando cuenta</string>
+    <string name="pass_no_match">Contraseña no coinciden</string>
+    <string name="msj_password">Contraseña no cumple con los requisitos</string>
+    <string name="campos_complete">Información Correcta</string>
+    <string name="user_Registro">Registro con exito</string>
+    <string name="datos_incorrectos">Datos incorrectos</string>
+    <string name="campo_email">Complete dato "Correo electronico"</string>
+    <string name="campo_contrasena">Complete dato "Contraseña"</string>
+    <string name="cargar">Cargando...</string>
+    <string name="msj_verificar">Verificando información</string>
+    <string name="no_registro_user">Error al registrar usuario</string>
+    <string name="registrarte">Registrarte</string>
+    <string name="tipo_membresia">Elige el tipo de membresia</string>
+    <string name="user_success">Usuario registrado exitosamente</string>
+    <string name="user_edit_success">Usuario actualizado exitosamente</string>
+    <string name="user_delete_success">Usuario eliminado exitosamente</string>
+    <string name="requerido">Requerido</string>
+    <string name="delete_user_question">¿Esta usted seguro?</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="delete_user">Eliminar usuario</string>
+    <string name="delete_product">Eliminar producto</string>
+    <string name="product_delete_success">Producto eliminado exitosamente</string>
+    <string name="product_update_success">Producto actualizado exitosamente</string>
+    <string-array name="membresia">
+        <item>Elige el tipo de membresia</item>
+        <item>Mensual</item>
+        <item>Anual</item>
+    </string-array>
+
+    <string-array name="stockVenta">
+        <item>...</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+
+</resources>

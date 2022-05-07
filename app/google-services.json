@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "917835646521",
+    "project_id": "castillogym-38dd9",
+    "storage_bucket": "castillogym-38dd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917835646521:android:cf11e263b2a6cdf1e8afe8",
+        "android_client_info": {
+          "package_name": "com.example.castillogym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917835646521-vs7i23cuk0gqrc335vf0o31q7a0q8ta3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj0CnPg-QOcFr_jIg15Kbulm8EKvJ6W4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917835646521-vs7i23cuk0gqrc335vf0o31q7a0q8ta3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
