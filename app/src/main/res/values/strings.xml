@@ -29,7 +29,7 @@
     <string name="product_delete_success">Producto eliminado exitosamente</string>
     <string name="product_update_success">Producto actualizado exitosamente</string>
     <string name="signOut">Cerrar Sesion</string>
-
+    <string name="report_success">GRACIAS! Reporte enviado exitosamente</string>
 
     <string-array name="membresia">
         <item>Elige el tipo de membresia</item>
