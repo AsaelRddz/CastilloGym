@@ -78,9 +78,6 @@ public class Login extends AppCompatActivity {
         });
 
 
-
-
-
         //Al presionar el textView de registrarse se inicia la pantalla de registrar cuenta
        /* IrRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,17 +99,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mUser.getCurrentUser();
-        if (currentUser != null) {
-            currentUser.reload();
-        }
-    }
-
-//Metodo iniciar Sesion
+    //Metodo iniciar Sesion
     private void LoginUser() {
         //Obtener los datos que escribio el usuario
         final String email = InputEmail.getText().toString().trim();
@@ -129,8 +116,6 @@ public class Login extends AppCompatActivity {
             loadingBar.setMessage(msj2);
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
-
-
         }
 
         //método para iniciar sesión en firebase authentication
@@ -153,7 +138,6 @@ public class Login extends AppCompatActivity {
                                         Users usuario = snapshot1.getValue(Users.class);
                                         String correo = usuario.getEmail();
                                         String password1 = usuario.getPassword();
-
 
 
                                         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);

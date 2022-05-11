@@ -6,12 +6,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MenuInicial extends AppCompatActivity {
+
+    private FirebaseAuth mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_inicial);
+
+        mUser = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mUser.getCurrentUser();
+        if (currentUser != null) {
+            currentUser.reload();
+        } else {
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
 
     //Método para dirigirnos a la pantalla de Administrar Usuarios
