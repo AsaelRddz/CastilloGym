@@ -16,17 +16,21 @@
     <string name="no_registro_user">Error al registrar usuario</string>
     <string name="registrarte">Registrarte</string>
     <string name="tipo_membresia">Elige el tipo de membresia</string>
-    <string name="user_success">Usuario registrado exitosamente</string>
-    <string name="user_edit_success">Usuario actualizado exitosamente</string>
-    <string name="user_delete_success">Usuario eliminado exitosamente</string>
     <string name="requerido">Requerido</string>
     <string name="delete_user_question">¿Esta usted seguro?</string>
     <string name="si">Si</string>
     <string name="no">No</string>
+    <string name="user_success">Usuario registrado exitosamente</string>
+    <string name="user_edit_success">Usuario actualizado exitosamente</string>
+    <string name="user_delete_success">Usuario eliminado exitosamente</string>
     <string name="delete_user">Eliminar usuario</string>
     <string name="delete_product">Eliminar producto</string>
+    <string name="producto_registrado">Producto registrado exitosamente</string>
     <string name="product_delete_success">Producto eliminado exitosamente</string>
     <string name="product_update_success">Producto actualizado exitosamente</string>
+    <string name="signOut">Cerrar Sesion</string>
+
+
     <string-array name="membresia">
         <item>Elige el tipo de membresia</item>
         <item>Mensual</item>

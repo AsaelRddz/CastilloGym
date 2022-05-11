@@ -73,9 +73,10 @@ public class AgregarProducto extends AppCompatActivity {
             // Crear un nodo con los datos en firebase
             databaseReference.child("Productos").child(p.getUid()).setValue(p);
             limpiarCajas();
-            Toast.makeText(this, R.string.user_Registro, Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(this, R.string.producto_registrado, Toast.LENGTH_SHORT).show();
 
+            startActivity(new Intent(this, Inventario.class));
+        }
     }
 
     private void validacion() {

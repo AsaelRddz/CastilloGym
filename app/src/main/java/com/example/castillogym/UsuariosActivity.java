@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,9 @@ public class UsuariosActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
+
     Clientes clientesSeleccionado;
+    ImageView btn_agregar_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,45 @@ public class UsuariosActivity extends AppCompatActivity {
         setContentView(R.layout.usuarios);
 
         list_view_personas = findViewById(R.id.list_view_personas);
+        btn_agregar_usuario = findViewById(R.id.btn_agregar_usuario);
 
+        inicializarFirebase();
+        listaDatos();
+
+        // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
+        list_view_personas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                clientesSeleccionado = (Clientes) adapterView.getItemAtPosition(i);
+
+                int tipo_membresia;
+
+                if(clientesSeleccionado.getTipo_membresia().equals("Mensual")){
+                    tipo_membresia = 1;
+                } else {
+                    tipo_membresia = 2;
+                }
+
+                // Mandamos los datos extraidos del objeto seleccionado con uso del intent
+                Intent intent = new Intent(getApplicationContext(),EditarUsuario.class);
+                intent.putExtra("uid",clientesSeleccionado.getUid());
+                intent.putExtra("nombreC",clientesSeleccionado.getNombreCompleto());
+                intent.putExtra("telefono",clientesSeleccionado.getTelefono());
+                intent.putExtra("edad",clientesSeleccionado.getEdad());
+                intent.putExtra("membresia",tipo_membresia);
+                startActivity(intent);
+            }
+        });
+
+        btn_agregar_usuario.setOnClickListener(v -> {
+            Intent i = new Intent(this, AgregarUsuarioActivity.class);
+            startActivity(i);
+        });
+
+        botones();
+    }
+
+    private void botones() {
         //inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //Set Home selected
@@ -75,35 +116,6 @@ public class UsuariosActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        inicializarFirebase();
-        listaDatos();
-
-        // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
-        list_view_personas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                clientesSeleccionado = (Clientes) adapterView.getItemAtPosition(i);
-
-                int tipo_membresia;
-
-                if(clientesSeleccionado.getTipo_membresia().equals("Mensual")){
-                    tipo_membresia = 1;
-                } else {
-                    tipo_membresia = 2;
-                }
-
-                // Mandamos los datos extraidos del objeto seleccionado con uso del intent
-                Intent intent = new Intent(getApplicationContext(),EditarUsuario.class);
-                intent.putExtra("uid",clientesSeleccionado.getUid());
-                intent.putExtra("nombreC",clientesSeleccionado.getNombreCompleto());
-                intent.putExtra("telefono",clientesSeleccionado.getTelefono());
-                intent.putExtra("edad",clientesSeleccionado.getEdad());
-                intent.putExtra("membresia",tipo_membresia);
-                startActivity(intent);
-            }
-        });
-
     }
 
     private void listaDatos() {

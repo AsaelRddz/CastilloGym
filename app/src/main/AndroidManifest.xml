@@ -11,16 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CastilloGym">
         <activity
-            android:name=".AdminUsersActivity"
-            android:exported="true" />
-        <activity
             android:name=".Informacion"
             android:exported="true" />
         <activity
             android:name=".Configuracion"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Inventario"
             android:exported="true" />
         <activity
             android:name=".NuevaCon"
@@ -73,7 +70,7 @@
         <activity android:name=".EditarVentas"
             android:exported="true" />
         <activity
-            android:name=".Inventario"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

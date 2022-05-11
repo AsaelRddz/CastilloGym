@@ -57,7 +57,6 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
         btn_agregar.setOnClickListener(v -> {
             agregarUsuario();
         });
-
     }
 
     private void inicializarFirebase() {
@@ -88,6 +87,8 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
             databaseReference.child("Clientes").child(c.getUid()).setValue(c);
             limpiarCajas();
             Toast.makeText(this, R.string.user_success, Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(this, UsuariosActivity.class));
         }
     }
 

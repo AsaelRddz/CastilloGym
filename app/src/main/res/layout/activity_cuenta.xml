@@ -70,16 +70,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         app:layout_constraintVertical_bias="0.191">
 
-        <EditText
-            android:id="@+id/idcambiocontrasena"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="303dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/imput"
-            android:ems="10"
-            android:hint="correo: admin@example.com"
-            android:inputType="textPersonName"
-            android:paddingLeft="20sp" />
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="16dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -94,15 +91,4 @@
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

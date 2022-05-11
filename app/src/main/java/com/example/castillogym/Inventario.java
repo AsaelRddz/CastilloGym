@@ -46,6 +46,35 @@ public class Inventario extends AppCompatActivity {
         list_view_productos = findViewById(R.id.list_view_productos);
         btn_agregar_producto = findViewById(R.id.btn_agregar_producto);
 
+
+        inicializarFirebase();
+        listaDatos();
+
+        btn_agregar_producto.setOnClickListener(v -> {
+            Intent i = new Intent(this, AgregarProducto.class);
+            startActivity(i);
+        });
+
+        // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
+        list_view_productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                productosSeleccionado = (Productos) adapterView.getItemAtPosition(i);
+
+                // Mandamos los datos extraidos del objeto seleccionado con uso del intent
+                Intent intent = new Intent(getApplicationContext(),EditarProducto.class);
+                intent.putExtra("uid",productosSeleccionado.getUid());
+                intent.putExtra("nombre",productosSeleccionado.getNombreProducto());
+                intent.putExtra("precio",productosSeleccionado.getPrecioProducto());
+                intent.putExtra("cantidad",productosSeleccionado.getCantidadProducto());
+                startActivity(intent);
+            }
+        });
+
+        botones();
+    }
+
+    private void botones() {
         //inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -74,37 +103,12 @@ public class Inventario extends AppCompatActivity {
                         return true;
                     case R.id.clientes:
                         startActivity(new Intent(getApplicationContext(),
-                                AdminUsersActivity.class));
+                                UsuariosActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }
 
                 return false;
-            }
-        });
-
-
-        inicializarFirebase();
-        listaDatos();
-
-        btn_agregar_producto.setOnClickListener(v -> {
-            Intent i = new Intent(this, AgregarProducto.class);
-            startActivity(i);
-        });
-
-        // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
-        list_view_productos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                productosSeleccionado = (Productos) adapterView.getItemAtPosition(i);
-
-                // Mandamos los datos extraidos del objeto seleccionado con uso del intent
-                Intent intent = new Intent(getApplicationContext(),EditarProducto.class);
-                intent.putExtra("uid",productosSeleccionado.getUid());
-                intent.putExtra("nombre",productosSeleccionado.getNombreProducto());
-                intent.putExtra("precio",productosSeleccionado.getPrecioProducto());
-                intent.putExtra("cantidad",productosSeleccionado.getCantidadProducto());
-                startActivity(intent);
             }
         });
     }

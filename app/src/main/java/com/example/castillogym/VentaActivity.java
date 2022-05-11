@@ -50,7 +50,7 @@ public class VentaActivity extends AppCompatActivity {
                         return true;
                     case R.id.clientes:
                         startActivity(new Intent(getApplicationContext(),
-                                AdminUsersActivity.class));
+                                UsuariosActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }

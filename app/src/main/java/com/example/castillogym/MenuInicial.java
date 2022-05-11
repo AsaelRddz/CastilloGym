@@ -16,7 +16,7 @@ public class MenuInicial extends AppCompatActivity {
 
     //Método para dirigirnos a la pantalla de Administrar Usuarios
     public void irUsuarios(View v){
-        Intent i = new Intent(this, AdminUsersActivity.class);
+        Intent i = new Intent(this, UsuariosActivity.class);
         startActivity(i);
     }
 
@@ -39,4 +39,7 @@ public class MenuInicial extends AppCompatActivity {
         startActivity(i);
 
     }
+
+    @Override
+    public void onBackPressed() {}
 }
