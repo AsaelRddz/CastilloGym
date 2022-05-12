@@ -67,7 +67,7 @@
                 android:background="@drawable/imput"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:paddingLeft="10sp" />
 
             <Space
@@ -81,7 +81,7 @@
                 android:background="@drawable/imput"
                 android:ems="10"
                 android:hint="Confirmar Contraseña"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:paddingLeft="10sp" />
 
             <Space

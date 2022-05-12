@@ -104,7 +104,7 @@ public class EditarProducto extends AppCompatActivity {
         String precioP = txtPrecio.getText().toString();
         String cantidadP = txtCantidad.getText().toString();
 
-        if(nombreP.equals("") || cantidadP.equals("") || precioP.equals("")){ validacion(); }
+        if(nombreP.equals("") || cantidadP.equals("") || precioP.equals("")){ validacion(nombreP, precioP, cantidadP); }
             else {
             Productos p = new Productos();
             p.setUid(UUID.randomUUID().toString());
@@ -117,11 +117,8 @@ public class EditarProducto extends AppCompatActivity {
         }
     }
 
-    private void validacion() {
+    private void validacion(String nombreP, String cantidadP, String precioP) {
         // Se obtiene tod0 lo de EditText pero al final el set es directo con EditText
-        String nombreP = txtProducto.getText().toString();
-        String precioP = txtPrecio.getText().toString();
-        String cantidadP = txtCantidad.getText().toString();
 
         if(nombreP.equals("")){
             txtProducto.setError(getString(R.string.requerido));

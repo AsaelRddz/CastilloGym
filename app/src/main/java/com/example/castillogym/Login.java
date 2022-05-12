@@ -61,13 +61,8 @@ public class Login extends AppCompatActivity {
         InputEmail = findViewById(R.id.txt_email_login);
         loadingBar = new ProgressDialog(this);
 
-
-
         IrRegistrar = findViewById(R.id.go_registrar);
         //IrRecuperar = findViewById(R.id.forget_password_link);
-
-
-
 
         //Al presionar sobre el botón se inicia el método LoginUser()
         LoginButton.setOnClickListener(new View.OnClickListener() {
@@ -99,25 +94,34 @@ public class Login extends AppCompatActivity {
 
     }
 
+    public void registrarse(View v){
+        Intent i = new Intent(this, Registrar.class);
+        startActivity(i);
+    }
+
     //Metodo iniciar Sesion
     private void LoginUser() {
         //Obtener los datos que escribio el usuario
-        final String email = InputEmail.getText().toString().trim();
-        final String password = InputPassword.getText().toString();
+        String email = InputEmail.getText().toString().trim();
+        String password = InputPassword.getText().toString();
 
         String msj2 = getResources().getString(R.string.msj_espera2);
-        //Condiciones para ver si no dejo campos vacios
+        //Condiciones para ver si no se dejan campos vacios
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, R.string.campo_email, Toast.LENGTH_SHORT).show();
+            InputEmail.setError(getString(R.string.requerido));
         } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, R.string.campo_contrasena, Toast.LENGTH_SHORT).show();
+            InputPassword.setError(getString(R.string.requerido));
         } else {
             loadingBar.setTitle(R.string.cargar);
             loadingBar.setMessage(msj2);
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
-        }
 
+            conexionFirebase(email, password);
+        }
+    }
+
+    private void conexionFirebase(String email, String password){
         //método para iniciar sesión en firebase authentication
         mUser.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -189,12 +193,12 @@ public class Login extends AppCompatActivity {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("msj", "signInWithEmail:failure", task.getException());
-                    Toast.makeText(Login.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.authFailed), Toast.LENGTH_SHORT).show();
+
+                    loadingBar.dismiss();
                 }
             }
         });
-
 
     }
 

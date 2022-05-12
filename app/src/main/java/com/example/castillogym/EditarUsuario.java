@@ -93,7 +93,7 @@ public class EditarUsuario extends AppCompatActivity {
         String spinnerM = spinner_membresia.getSelectedItem().toString();
 
         if(nombreC.equals("") || edad.equals("") || telefono.equals("") || spinnerM.equals(getString(R.string.tipo_membresia))){
-            validacion();
+            validacion(nombreC, edad, telefono);
         } else {
             Clientes c = new Clientes();
             c.setUid(uid);
@@ -110,11 +110,8 @@ public class EditarUsuario extends AppCompatActivity {
         }
     }
 
-    private void validacion() {
+    private void validacion(String nombreC, String edad, String telefono) {
         // Se obtiene tod0 lo de EditText pero al final el set es directo con EditText
-        String nombreC = et_nombre_completo.getText().toString();
-        String edad = et_edad.getText().toString();
-        String telefono = et_telefono.getText().toString();
         String spinnerM = spinner_membresia.getSelectedItem().toString();
 
         if(nombreC.equals("")){

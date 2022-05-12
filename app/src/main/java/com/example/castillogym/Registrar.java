@@ -57,7 +57,6 @@ public class Registrar extends AppCompatActivity {
         }
     }
 
-
     private void CreateAccount() {
         //Se obtienen los textos de todos los campos y se pasan a variables String para poder trabajar con ellos
 
@@ -93,9 +92,20 @@ public class Registrar extends AppCompatActivity {
             }
         } else {
             //Mensaje que se muestra si no se llenó la información solicitada en todos los campos
-            Toast.makeText(Registrar.this, R.string.campos_complete, Toast.LENGTH_SHORT).show();
+            validacion(name, email, password, confpassword);
         }
+    }
 
+    private void validacion(String name, String email, String password, String confpassword){
+        if(name.equals("")){
+            InputName.setError(getString(R.string.requerido));
+        } else if(email.equals("")){
+            InputEmail.setError(getString(R.string.requerido));
+        } else if(password.equals("")) {
+            InputPassword.setError(getString(R.string.requerido));
+        } else if(confpassword.equals("")) {
+            InputConfPassword.setError(getString(R.string.requerido));
+        }
     }
 
     private void ValidateAccount(String name, String email, String password) {

@@ -90,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:onClick="registrarse"
             android:paddingRight="15sp"
             android:text="Registrarte"
             android:textColor="#F88702"
