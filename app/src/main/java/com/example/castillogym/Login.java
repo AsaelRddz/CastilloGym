@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 
+import java.util.HashMap;
+
 
 public class Login extends AppCompatActivity {
 
@@ -40,7 +42,7 @@ public class Login extends AppCompatActivity {
     FirebaseAuth mAuth;
     private FirebaseAuth mUser;
     private DatabaseReference mDatabase;
-    private String parentDbName = "Admin";
+    private final String parentDbName = "Admin";
     SharedPreferences sharedPreferences;
 
     private TextView AdminLink, UserLink, TipoUsuarioUser, TipoUsuarioAdmin, IrRegistrar, IrRecuperar;
@@ -62,7 +64,7 @@ public class Login extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
 
         IrRegistrar = findViewById(R.id.go_registrar);
-        //IrRecuperar = findViewById(R.id.forget_password_link);
+        IrRecuperar = findViewById(R.id.forgot);
 
         //Al presionar sobre el botón se inicia el método LoginUser()
         LoginButton.setOnClickListener(new View.OnClickListener() {
@@ -74,49 +76,43 @@ public class Login extends AppCompatActivity {
 
 
         //Al presionar el textView de registrarse se inicia la pantalla de registrar cuenta
-       /* IrRegistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, LoginRegisterActivity.class);
-                startActivity(i);
-            }
-        });*/
+       IrRegistrar.setOnClickListener(v -> {
+           Intent i = new Intent(this, Registrar.class);
+           startActivity(i);
+       });
 
-        //Al presionar el textView de olvidaste contraseña se inicia la pantalla de olvidar contraseña
-       /* IrRecuperar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, UserActivity.class);
-                startActivity(i);
-            }
-        });*/
-
-
-    }
-
-    public void registrarse(View v){
-        Intent i = new Intent(this, Registrar.class);
-        startActivity(i);
+       //Al presionar el textView de olvidaste contraseña se inicia la pantalla de olvidar contraseña
+       IrRecuperar.setOnClickListener(v -> {
+           Intent i = new Intent(this, Forgot.class);
+           startActivity(i);
+       });
     }
 
     //Metodo iniciar Sesion
     private void LoginUser() {
+        String msj2 = getResources().getString(R.string.msj_espera2);
+        // Barra de progreso
+        loadingBar.setTitle(R.string.cargar);
+        loadingBar.setMessage(msj2);
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.show();
+
         //Obtener los datos que escribio el usuario
         String email = InputEmail.getText().toString().trim();
         String password = InputPassword.getText().toString();
 
-        String msj2 = getResources().getString(R.string.msj_espera2);
         //Condiciones para ver si no se dejan campos vacios
         if (TextUtils.isEmpty(email)) {
-            InputEmail.setError(getString(R.string.requerido));
-        } else if (TextUtils.isEmpty(password)) {
-            InputPassword.setError(getString(R.string.requerido));
-        } else {
-            loadingBar.setTitle(R.string.cargar);
-            loadingBar.setMessage(msj2);
-            loadingBar.setCanceledOnTouchOutside(false);
-            loadingBar.show();
+            loadingBar.dismiss();
 
+            InputEmail.setError(getString(R.string.requerido));
+            InputEmail.requestFocus();
+        } else if (TextUtils.isEmpty(password)) {
+            loadingBar.dismiss();
+
+            InputPassword.setError(getString(R.string.requerido));
+            InputPassword.requestFocus();
+        } else {
             conexionFirebase(email, password);
         }
     }
@@ -140,9 +136,8 @@ public class Login extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         Users usuario = snapshot1.getValue(Users.class);
-                                        String correo = usuario.getEmail();
-                                        String password1 = usuario.getPassword();
-
+                                        //String correo = usuario.getEmail();
+                                        //String password1 = usuario.getPassword();
 
                                         sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE);
 
@@ -152,10 +147,9 @@ public class Login extends AppCompatActivity {
 
                                         if (user.isEmailVerified()) {
 
-                                            if (email.equals(correo) && password.equals(password1)) {
-
-                                                if (parentDbName.equals("Admin")) {
+                                            if (parentDbName.equals("Admin")) {
                                                     loadingBar.dismiss();
+                                                    Toast.makeText(Login.this, getString(R.string.welcome), Toast.LENGTH_SHORT).show();
                                                     Prevalent.currentOnlineUser = usuario;
                                                     Intent intent = new Intent(Login.this, MenuInicial.class);
                                                     startActivity(intent);
@@ -166,17 +160,15 @@ public class Login extends AppCompatActivity {
                                                 //Toast.makeText(LoginActivity.this, R.string.msj_error_login, Toast.LENGTH_SHORT).show();
                                             }
 
-
-                                        } else {
-                                            Toast.makeText(Login.this, R.string.msj_verificar, Toast.LENGTH_SHORT).show();
-                                            FirebaseAuth.getInstance().signOut();
-                                            Intent intent = getIntent();
-                                            finish();
-                                            startActivity(intent);
+                                            /*
+                                                else {
+                                                    Toast.makeText(Login.this, R.string.msj_verificar, Toast.LENGTH_SHORT).show();
+                                                    FirebaseAuth.getInstance().signOut();
+                                                    Intent intent = getIntent();
+                                                    finish();
+                                                    startActivity(intent);
+                                                } */
                                         }
-
-
-                                    }
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {

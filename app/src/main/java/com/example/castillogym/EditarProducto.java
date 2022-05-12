@@ -122,10 +122,13 @@ public class EditarProducto extends AppCompatActivity {
 
         if(nombreP.equals("")){
             txtProducto.setError(getString(R.string.requerido));
+            txtProducto.requestFocus();
         } else if(precioP.equals("")){
             txtPrecio.setError(getString(R.string.requerido));
+            txtPrecio.requestFocus();
         } else if(cantidadP.equals("")) {
             txtCantidad.setError(getString(R.string.requerido));
+            txtCantidad.requestFocus();
         }
     }
 }

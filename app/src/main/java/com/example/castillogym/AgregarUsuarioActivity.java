@@ -101,10 +101,13 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
 
         if(nombreC.equals("")){
             et_nombre_completo.setError(getString(R.string.requerido));
+            et_nombre_completo.requestFocus();
         } else if(edad.equals("")){
             et_edad.setError(getString(R.string.requerido));
+            et_edad.requestFocus();
         } else if(telefono.equals("")){
             et_telefono.setError(getString(R.string.requerido));
+            et_telefono.requestFocus();
         } else if(spinnerM.equals(getString(R.string.tipo_membresia))){
             Toast.makeText(this,getString(R.string.tipo_membresia), Toast.LENGTH_SHORT).show();
         }

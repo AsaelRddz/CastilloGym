@@ -58,8 +58,14 @@ public class Registrar extends AppCompatActivity {
     }
 
     private void CreateAccount() {
-        //Se obtienen los textos de todos los campos y se pasan a variables String para poder trabajar con ellos
+        String msj2 = getResources().getString(R.string.msj_espera2);
+        //Información que se muestra en la barra de progreso
+        loadingBar.setTitle(R.string.create_Account);
+        loadingBar.setMessage(msj2);
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.show();
 
+        //Se obtienen los textos de todos los campos y se pasan a variables String para poder trabajar con ellos
         String name = InputName.getText().toString();
         String email = InputEmail.getText().toString().trim();
         String password = InputPassword.getText().toString();
@@ -69,28 +75,27 @@ public class Registrar extends AppCompatActivity {
         TipoUs = "Admin";
 
         //Mnesaje que aparece en la ventana que muestra el progreso para terminar de ejecutarse el método
-        String msj2 = getResources().getString(R.string.msj_espera2);
         if(!name.isEmpty() && !email.isEmpty() && !password.isEmpty() && !confpassword.isEmpty()) {
             if (password.length() >= 6) {
                 //Condición para comparar el texto de los dos campos donde se escribio la contraseña para validar que sean las mismas
                 if(password.equals(confpassword)){
-                    //Información que se muestra en la barra de progreso
-                    loadingBar.setTitle(R.string.create_Account);
-                    loadingBar.setMessage(msj2);
-                    loadingBar.setCanceledOnTouchOutside(false);
-                    loadingBar.show();
-
                     ValidateAccount(name, email, password);
                 } else {
+                    loadingBar.dismiss();
+
                     //Mensaje que se muestra si las contraseñas escritas en los dos campos no coinciden
                     Toast.makeText(this, R.string.pass_no_match, Toast.LENGTH_SHORT).show();
                 }
 
             } else {
+                loadingBar.dismiss();
+
                 //Mensaje que se muestra si la contraseña escrita tiene menos de 6 carácteres
                 Toast.makeText(Registrar.this, R.string.msj_password, Toast.LENGTH_SHORT).show();
             }
         } else {
+            loadingBar.dismiss();
+
             //Mensaje que se muestra si no se llenó la información solicitada en todos los campos
             validacion(name, email, password, confpassword);
         }
@@ -99,12 +104,16 @@ public class Registrar extends AppCompatActivity {
     private void validacion(String name, String email, String password, String confpassword){
         if(name.equals("")){
             InputName.setError(getString(R.string.requerido));
+            InputName.requestFocus();
         } else if(email.equals("")){
             InputEmail.setError(getString(R.string.requerido));
+            InputEmail.requestFocus();
         } else if(password.equals("")) {
             InputPassword.setError(getString(R.string.requerido));
+            InputPassword.requestFocus();
         } else if(confpassword.equals("")) {
             InputConfPassword.setError(getString(R.string.requerido));
+            InputConfPassword.requestFocus();
         }
     }
 
@@ -122,7 +131,6 @@ public class Registrar extends AppCompatActivity {
                     userdataMap.put("name", name);
                     userdataMap.put("email", email);
                     userdataMap.put("password", password);
-
 
                     //Se obtiene el id del usuario recientemente creado
                     String id = mAuth.getCurrentUser().getUid();
