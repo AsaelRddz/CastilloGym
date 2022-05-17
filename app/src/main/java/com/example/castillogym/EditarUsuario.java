@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.castillogym.Model.Clientes;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -38,7 +39,6 @@ public class EditarUsuario extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +81,9 @@ public class EditarUsuario extends AppCompatActivity {
             eliminarUsuarios();
         });
 
-
         Enviar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                enviarMensaje("8126304529","Hola Soy ANDROFAST te estoy enviando un Mensaje");
+                enviarMensaje(et_telefono.getText().toString(),"Hola Soy ANDROFAST te estoy enviando un Mensaje");
             }
 
             private void enviarMensaje (String numero, String mensaje){
@@ -100,8 +99,6 @@ public class EditarUsuario extends AppCompatActivity {
             }
         });
     }
-
-
 
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
