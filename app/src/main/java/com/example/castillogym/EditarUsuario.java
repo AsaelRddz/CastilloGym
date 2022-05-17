@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -30,7 +31,7 @@ import android.widget.Toast;
 
 public class EditarUsuario extends AppCompatActivity {
 
-    ImageButton btn_guardar_cambios, btn_eliminar;
+    ImageButton btn_guardar_cambios, btn_eliminar, Enviar;
     EditText et_nombre_completo, et_edad, et_telefono;
     Spinner spinner_membresia;
     String uid;
@@ -50,6 +51,7 @@ public class EditarUsuario extends AppCompatActivity {
         et_edad = findViewById(R.id.et_edad);
         et_telefono = findViewById(R.id.et_telefono);
         spinner_membresia = findViewById(R.id.spinner_membresia);
+        Enviar= findViewById(R.id.btn_notificar);
 
         // Creando un ArrayAdapter usando la matriz de cadenas y un diseño spinner predeterminado
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -78,7 +80,28 @@ public class EditarUsuario extends AppCompatActivity {
         btn_eliminar.setOnClickListener(v -> {
             eliminarUsuarios();
         });
+
+
+        Enviar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                enviarMensaje("8126304529","Hola Soy ANDROFAST te estoy enviando un Mensaje");
+            }
+
+            private void enviarMensaje (String numero, String mensaje){
+                try {
+                    SmsManager sms = SmsManager.getDefault();
+                    sms.sendTextMessage(numero,null,mensaje,null,null);
+                    Toast.makeText(getApplicationContext(), "Mensaje Enviado.", Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Mensaje no enviado, datos incorrectos.", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            }
+        });
     }
+
+
 
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
@@ -159,4 +182,7 @@ public class EditarUsuario extends AppCompatActivity {
         Intent ua = new Intent(this, UsuariosActivity.class);
         startActivity(ua);
     }
+
+    
+    
 }

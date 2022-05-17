@@ -1,9 +1,14 @@
 package com.example.castillogym;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +18,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Método para revisar que este permitido el permiso de enviar SMS
+        if(ActivityCompat.checkSelfPermission(
+                MainActivity.this, Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED&& ActivityCompat.checkSelfPermission(
+                MainActivity.this,Manifest
+                        .permission.SEND_SMS)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MainActivity.this,new String[]
+                    { Manifest.permission.SEND_SMS,},1000);
+        }else{
+        };
 
     }
 
@@ -28,4 +43,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
+
 }

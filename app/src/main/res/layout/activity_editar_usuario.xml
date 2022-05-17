@@ -23,9 +23,11 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
+        android:background="@drawable/imput"
         android:ems="10"
         android:hint="Nombre completo"
         android:inputType="textPersonName"
+        android:paddingLeft="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,77 +41,95 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="30dp"
+        android:background="@drawable/imput"
         android:ems="10"
         android:hint="Edad"
         android:inputType="number"
+        android:paddingLeft="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nombre_completo"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/et_telefono"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="30dp"
-        android:ems="10"
-        android:hint="Telefono"
-        android:inputType="number"
+
+    <LinearLayout
+        android:layout_width="349dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_edad"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.25">
 
+        <EditText
+            android:id="@+id/et_telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:background="@drawable/imput"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="number"
+            android:paddingLeft="10sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_notificar"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/notificar"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="Tipo de membresia"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner_membresia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_membresia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="283dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/input"
         android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_telefono"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/btn_guardar_cambios"
         android:layout_width="156dp"
         android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/guardar_cambios" />
+        app:srcCompat="@drawable/guardar_cambios"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/btn_eliminar"
         android:layout_width="159dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/eliminar" />
+        app:srcCompat="@drawable/eliminar"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

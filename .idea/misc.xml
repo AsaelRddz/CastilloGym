@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_configuracion.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_cuenta.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_editar_usuario.xml" value="0.33" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_interfaz_proteinas.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_interfaz_quemadores.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_inventario.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_login.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_main.xml" value="0.17798913043478262" />
+        <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_nueva_con.xml" value="0.2" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/activity_agregar_producto.xml" value="0.33" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/activity_cuenta.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/activity_editar_producto.xml" value="0.36666666666666664" />
