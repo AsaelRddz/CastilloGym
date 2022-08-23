@@ -1,8 +1,10 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.Reportes;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.castillogym.R;
 
 public class ReportesActivity extends AppCompatActivity {
 

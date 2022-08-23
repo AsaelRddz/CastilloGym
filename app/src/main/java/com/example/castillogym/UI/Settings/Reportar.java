@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.Settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.castillogym.Model.Clientes;
 import com.example.castillogym.Model.Reportes;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.Settings.Configuracion;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

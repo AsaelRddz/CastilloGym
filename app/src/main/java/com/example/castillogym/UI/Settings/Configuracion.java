@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.Settings;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -10,7 +10,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.castillogym.Model.Clientes;
+import com.example.castillogym.UI.ViewItems.Inventario;
+import com.example.castillogym.MainActivity;
+import com.example.castillogym.MenuInicial;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 

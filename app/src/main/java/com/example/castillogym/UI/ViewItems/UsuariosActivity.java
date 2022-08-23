@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.ViewItems;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,12 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.castillogym.MenuInicial;
 import com.example.castillogym.Model.Clientes;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.AddItems.AgregarUsuarioActivity;
+import com.example.castillogym.UI.AddItems.EditarUsuario;
+import com.example.castillogym.UI.Settings.Configuracion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -63,7 +68,7 @@ public class UsuariosActivity extends AppCompatActivity {
                 }
 
                 // Mandamos los datos extraidos del objeto seleccionado con uso del intent
-                Intent intent = new Intent(getApplicationContext(),EditarUsuario.class);
+                Intent intent = new Intent(getApplicationContext(), EditarUsuario.class);
                 intent.putExtra("uid",clientesSeleccionado.getUid());
                 intent.putExtra("nombreC",clientesSeleccionado.getNombreCompleto());
                 intent.putExtra("telefono",clientesSeleccionado.getTelefono());

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregarProducto">
+    tools:context=".UI.AddItems.AgregarProducto">
 
     <ImageButton
         android:id="@+id/btn_guardar_cambios_producto"

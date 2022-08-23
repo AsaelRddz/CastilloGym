@@ -11,63 +11,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CastilloGym">
         <activity
-            android:name=".Informacion"
+            android:name=".UI.Settings.Informacion"
             android:exported="true" />
         <activity
-            android:name=".Configuracion"
+            android:name=".UI.Settings.Configuracion"
             android:exported="true" />
         <activity
-            android:name=".Inventario"
+            android:name=".UI.ViewItems.Inventario"
             android:exported="true" />
         <activity
-            android:name=".NuevaCon"
+            android:name=".UI.Settings.Reportar"
             android:exported="true" />
         <activity
-            android:name=".Reportar"
+            android:name=".UI.Settings.Cuenta"
             android:exported="true" />
         <activity
-            android:name=".Cuenta"
-            android:exported="true" />
-        <activity
-            android:name=".Registrar"
+            android:name=".UI.Login.Registrar"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Forgot"
+            android:name=".UI.Login.Forgot"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".UI.Login.Login"
             android:exported="true" />
         <activity
-            android:name=".AgregarUsuarioActivity"
+            android:name=".UI.AddItems.AgregarUsuarioActivity"
             android:exported="true" />
         <activity
-            android:name=".VentaYReportesActivity"
+            android:name=".UI.Reportes.VentaYReportesActivity"
             android:exported="true" />
         <activity
-            android:name=".UsuariosActivity"
+            android:name=".UI.ViewItems.UsuariosActivity"
             android:exported="true" />
         <activity
-            android:name=".VentaActivity"
+            android:name=".UI.ViewItems.VentaActivity"
             android:exported="true" />
         <activity
-            android:name=".ReportesActivity"
+            android:name=".UI.Reportes.ReportesActivity"
             android:exported="true" />
-        <activity android:name=".EditarProducto"
+        <activity android:name=".UI.AddItems.EditarProducto"
             android:exported="true" />
-        <activity android:name=".AgregarProducto"
+        <activity android:name=".UI.AddItems.AgregarProducto"
             android:exported="true" />
-        <activity android:name=".InterfazQuemadores"
+        <activity android:name=".UI.Reportes.ReporteDeVentas"
             android:exported="true" />
-        <activity android:name=".InterfazProteinas"
+        <activity android:name=".UI.AddItems.EditarUsuario"
             android:exported="true" />
-        <activity android:name=".ReporteDeVentas"
-            android:exported="true" />
-        <activity android:name=".EditarUsuario"
-            android:exported="true" />
-        <activity android:name=".EditarVentas"
+        <activity android:name=".UI.AddItems.EditarVentas"
             android:exported="true" />
         <activity
             android:name=".MenuInicial"

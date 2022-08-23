@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.Login;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,8 +15,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.castillogym.MenuInicial;
 import com.example.castillogym.Model.Users;
 import com.example.castillogym.Prevalent.Prevalent;
+import com.example.castillogym.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,8 +30,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
-
-import java.util.HashMap;
 
 
 public class Login extends AppCompatActivity {

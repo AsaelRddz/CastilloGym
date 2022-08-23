@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.castillogym.UI.Reportes.VentaYReportesActivity;
+import com.example.castillogym.UI.Settings.Configuracion;
+import com.example.castillogym.UI.ViewItems.Inventario;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

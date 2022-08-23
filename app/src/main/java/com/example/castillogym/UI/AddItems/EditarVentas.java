@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.AddItems;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,14 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.castillogym.UI.ViewItems.Inventario;
+import com.example.castillogym.MenuInicial;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.Settings.Configuracion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ReporteDeVentas extends AppCompatActivity {
+public class EditarVentas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reporte_de_ventas);
+        setContentView(R.layout.activity_editar_ventas);
 
         //inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -52,6 +56,5 @@ public class ReporteDeVentas extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 }

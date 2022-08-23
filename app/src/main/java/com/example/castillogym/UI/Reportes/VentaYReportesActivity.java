@@ -1,60 +1,38 @@
-package com.example.castillogym;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.castillogym.UI.Reportes;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.castillogym.MenuInicial;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.Settings.Configuracion;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
+import com.example.castillogym.UI.ViewItems.VentaActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class Cuenta extends AppCompatActivity {
-
-    private FirebaseAuth mUser;
-    TextView correo_user;
-    ImageButton forgot;
+public class VentaYReportesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cuenta);
-        mUser = FirebaseAuth.getInstance();
-
-        botones();
-
-
-        correo_user = findViewById(R.id.correo_user);
-        forgot = findViewById(R.id.forgot);
-
-        mUser = FirebaseAuth.getInstance();
-
-        // Mostrando el email de la cuenta actual
-        correo_user.setText(mUser.getCurrentUser().getEmail());
-
-        forgot.setOnClickListener(v -> {
-            startActivity(new Intent(this, Forgot.class));
-        });
-    }
-
-
-    private void botones() {
-        //inicializamos variables
+        setContentView(R.layout.venta_y_reportes);
+//inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.ajustes);
+        bottomNavigationView.setSelectedItemId(R.id.inventarios);
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
 
         {
+
+
             @Override
             public boolean onNavigationItemSelected (@NonNull MenuItem menuItem){
                 switch (menuItem.getItemId()) {
@@ -64,12 +42,12 @@ public class Cuenta extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.ajustes:
-
+                        startActivity(new Intent(getApplicationContext(),
+                                Configuracion.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.inventarios:
-                        startActivity(new Intent(getApplicationContext(),
-                                Inventario.class));
-                        overridePendingTransition(0, 0);
+
                         return true;
                     case R.id.clientes:
                         startActivity(new Intent(getApplicationContext(),
@@ -77,8 +55,23 @@ public class Cuenta extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                 }
+
                 return false;
             }
         });
+
     }
+    //Método para dirigirnos a la pantalla de Reportes
+    public void irReportesActivity(View v){
+        Intent i = new Intent(this, ReportesActivity.class);
+        startActivity(i);
+    }
+
+    //Método para dirigirnos a la pantalla de Venta
+    public void irVentas(View v){
+        Intent i = new Intent(this, VentaActivity.class);
+        startActivity(i);
+
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.ViewItems;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +9,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.example.castillogym.Model.Clientes;
+import com.example.castillogym.MenuInicial;
 import com.example.castillogym.Model.Productos;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.AddItems.AgregarProducto;
+import com.example.castillogym.UI.AddItems.EditarProducto;
+import com.example.castillogym.UI.Settings.Configuracion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -62,7 +65,7 @@ public class Inventario extends AppCompatActivity {
                 productosSeleccionado = (Productos) adapterView.getItemAtPosition(i);
 
                 // Mandamos los datos extraidos del objeto seleccionado con uso del intent
-                Intent intent = new Intent(getApplicationContext(),EditarProducto.class);
+                Intent intent = new Intent(getApplicationContext(), EditarProducto.class);
                 intent.putExtra("uid",productosSeleccionado.getUid());
                 intent.putExtra("nombre",productosSeleccionado.getNombreProducto());
                 intent.putExtra("precio",productosSeleccionado.getPrecioProducto());

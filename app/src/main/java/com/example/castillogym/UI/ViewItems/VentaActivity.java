@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.ViewItems;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.castillogym.R;
+import com.example.castillogym.UI.Settings.Configuracion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class VentaActivity extends AppCompatActivity {

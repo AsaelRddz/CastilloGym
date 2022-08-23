@@ -1,4 +1,4 @@
-package com.example.castillogym;
+package com.example.castillogym.UI.AddItems;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,26 +7,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsManager;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.castillogym.Model.Clientes;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.castillogym.R;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.net.URL;
-
-import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
