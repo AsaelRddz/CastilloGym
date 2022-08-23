@@ -43,5 +43,6 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Registrar.class);
         startActivity(i);
 
+        System.out.println("Hola mundo");
     }
 }
