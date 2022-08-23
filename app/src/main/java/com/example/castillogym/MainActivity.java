@@ -42,7 +42,5 @@ public class MainActivity extends AppCompatActivity {
     public void irRegistrar(View v){
         Intent i = new Intent(this, Registrar.class);
         startActivity(i);
-
-        System.out.println("Hola mundo");
     }
 }
