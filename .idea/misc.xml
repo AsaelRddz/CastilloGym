@@ -19,6 +19,25 @@
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/activity_interfaz_proteinas.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/admin_users.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_v4_asa/CastilloGym/app/src/main/res/layout/usuarios.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_add_items.xml" value="0.403" />
+        <entry key="app/src/main/res/layout/activity_cuenta.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_editar_usuario.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_forgot.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_informacion.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_interfaz_proteinas.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_interfaz_quemadores.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_inventario.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_menu_inicial.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_nueva_con.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_reportar.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/activity_reporte_de_ventas.xml" value="0.2989583333333333" />
+        <entry key="app/src/main/res/layout/item_inventario.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/item_reportes.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/item_usuario.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/reportes.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/usuarios.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/venta.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/venta_y_reportes.xml" value="0.2989583333333333" />
       </map>
     </option>
   </component>
