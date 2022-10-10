@@ -3,7 +3,7 @@
     <style name="Theme.CastilloGym" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#EA900B</item>
-        <item name="colorPrimaryVariant">@color/naranja</item>
+        <item name="colorPrimaryVariant">@color/principal</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

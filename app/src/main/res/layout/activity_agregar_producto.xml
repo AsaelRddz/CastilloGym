@@ -70,7 +70,7 @@
         android:id="@+id/btn_agregar_producto"
         android:layout_width="172dp"
         android:layout_height="62dp"
-        android:backgroundTint="@color/naranja"
+        android:backgroundTint="@color/principal"
         android:text="Agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
