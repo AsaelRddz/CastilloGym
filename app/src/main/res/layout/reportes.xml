@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_margin="30dp"
+        android:background="@drawable/boton_esquinas_redondeadas_blanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />

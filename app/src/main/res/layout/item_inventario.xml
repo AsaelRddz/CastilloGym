@@ -70,7 +70,7 @@
         tools:text="Cantidad: 200" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageUser"
         android:layout_width="62dp"
         android:layout_height="62dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"

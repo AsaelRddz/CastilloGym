@@ -52,7 +52,7 @@
         tools:text="Membresia: Mensual" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageUser"
         android:layout_width="62dp"
         android:layout_height="61dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
