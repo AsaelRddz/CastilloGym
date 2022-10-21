@@ -47,7 +47,7 @@
             android:id="@+id/btnForgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/black"
+            android:background="@color/black"
             android:gravity="center"
             android:text="Enviar correo de recuperación"
             android:textAllCaps="false"
