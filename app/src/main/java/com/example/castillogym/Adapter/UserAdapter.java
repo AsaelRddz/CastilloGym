@@ -1,8 +1,6 @@
-package com.example.castillogym;
+package com.example.castillogym.Adapter;
 
-import android.app.LauncherActivity;
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.castillogym.Model.Clientes;
+import com.example.castillogym.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 

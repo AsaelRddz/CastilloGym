@@ -3,6 +3,7 @@ package com.example.castillogym;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,19 +11,23 @@ import com.example.castillogym.UI.Reportes.VentaYReportesActivity;
 import com.example.castillogym.UI.Settings.Configuracion;
 import com.example.castillogym.UI.ViewItems.Inventario;
 import com.example.castillogym.UI.ViewItems.UsuariosActivity;
+import com.example.castillogym.databinding.ActivityMenuInicialBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MenuInicial extends AppCompatActivity {
 
     private FirebaseAuth mUser;
+    private ActivityMenuInicialBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_inicial);
+        binding = ActivityMenuInicialBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         mUser = FirebaseAuth.getInstance();
+        binding.imageMenu.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/castillogymoficial1/"))));
     }
 
     @Override
@@ -65,6 +70,4 @@ public class MenuInicial extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {}
-
-
 }

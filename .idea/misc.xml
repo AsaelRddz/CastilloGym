@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/drawable/boton_esquinas_redondeadas.xml" value="0.2165" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/drawable/boton_esquinas_redondeadas_blanco.xml" value="0.2165" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/drawable/ic_add_items.xml" value="0.1" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_agregar_producto.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_configuracion.xml" value="0.1" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_cuenta.xml" value="0.209375" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_editar_producto.xml" value="0.1" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_editar_producto.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_editar_usuario.xml" value="0.33" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_editar_ventas.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_forgot.xml" value="0.33" />
@@ -17,14 +19,16 @@
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_inventario.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_login.xml" value="0.12" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_menu_inicial.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_registrar.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_reportar.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_reporte_de_ventas.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/example_ventas.xml" value="0.209375" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_inventario.xml" value="0.33" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_reportes.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_usuario.xml" value="0.5" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/reportes.xml" value="0.25" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/usuarios.xml" value="0.33" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/usuarios.xml" value="0.28762541806020064" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/venta.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/venta_y_reportes.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/menu/menu.xml" value="0.25" />

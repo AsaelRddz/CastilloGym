@@ -4,13 +4,6 @@ public class Productos {
 
     private String uid, nombreProducto, precioProducto, cantidadProducto;
 
-    public Productos(){
-        this.uid = uid;
-        this.nombreProducto = nombreProducto;
-        this.precioProducto = precioProducto;
-        this.cantidadProducto = cantidadProducto;
-
-    }
     public String getUid() {
         return uid;
     }

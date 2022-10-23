@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.castillogym.UI.ViewItems.Inventario;
 import com.example.castillogym.Model.Productos;
 import com.example.castillogym.R;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -98,16 +99,20 @@ public class EditarProducto extends AppCompatActivity {
         String precioP = txtPrecio.getText().toString();
         String cantidadP = txtCantidad.getText().toString();
 
-        if(nombreP.equals("") || cantidadP.equals("") || precioP.equals("")){ validacion(nombreP, precioP, cantidadP); }
-            else {
+        if(nombreP.equals("") || cantidadP.equals("") || precioP.equals("")){
+            validacion(nombreP, precioP, cantidadP);
+        } else {
             Productos p = new Productos();
-            p.setUid(UUID.randomUUID().toString());
+            p.setUid(uid);
             p.setNombreProducto(nombreP);
             p.setPrecioProducto(precioP);
             p.setCantidadProducto(cantidadP);
 
             databaseReference.child("Productos").child(uid).setValue(p);
             Toast.makeText(this, getString(R.string.product_update_success), Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(this, Inventario.class);
+            startActivity(i);
         }
     }
 
