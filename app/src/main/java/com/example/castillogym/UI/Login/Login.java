@@ -19,6 +19,7 @@ import com.example.castillogym.MenuInicial;
 import com.example.castillogym.Model.Users;
 import com.example.castillogym.Prevalent.Prevalent;
 import com.example.castillogym.R;
+import com.example.castillogym.UI.AddItems.EditarUsuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -149,15 +150,14 @@ public class Login extends AppCompatActivity {
 
                                             if (parentDbName.equals("Admin")) {
                                                     loadingBar.dismiss();
-                                                    Toast.makeText(Login.this, getString(R.string.welcome), Toast.LENGTH_SHORT).show();
                                                     Prevalent.currentOnlineUser = usuario;
-                                                    Intent intent = new Intent(Login.this, MenuInicial.class);
-                                                    startActivity(intent);
-                                                    finish();
+
+                                                    startActivity(new Intent(Login.this, MenuInicial.class));
+                                                finish();
                                                 }
                                             } else {
                                                 loadingBar.dismiss();
-                                                //Toast.makeText(LoginActivity.this, R.string.msj_error_login, Toast.LENGTH_SHORT).show();
+                                                // Toast.makeText(this, R.string.msj_error_login, Toast.LENGTH_SHORT).show();
                                             }
 
                                             /*

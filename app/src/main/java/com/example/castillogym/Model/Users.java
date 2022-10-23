@@ -4,14 +4,6 @@ public class Users {
 
     private String id, email, name, password, tipous;
 
-    public Users(String id, String email, String name, String password, String tipous) {
-        this.id = id;
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.tipous = tipous;
-    }
-
     public String getId() {
         return id;
     }

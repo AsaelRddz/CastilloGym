@@ -76,6 +76,14 @@
         app:layout_constraintVertical_bias="0.191">
 
         <TextView
+            android:id="@+id/nameCurrent_user"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            tools:text="Asael" />
+
+        <TextView
             android:id="@+id/correo_user"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
