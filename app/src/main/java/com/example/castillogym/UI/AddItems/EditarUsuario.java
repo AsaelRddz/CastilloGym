@@ -75,7 +75,7 @@ public class EditarUsuario extends AppCompatActivity {
 
         Enviar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                enviarMensaje(et_telefono.getText().toString(),"Hola Soy ANDROFAST te estoy enviando un Mensaje");
+                enviarMensaje(et_telefono.getText().toString(),"Bienvenido a Castillo Gym, gracias por su preferencia");
             }
 
             private void enviarMensaje (String numero, String mensaje){

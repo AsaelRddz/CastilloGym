@@ -3,16 +3,21 @@ package com.example.castillogym.UI.AddItems;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.castillogym.Model.Clientes;
 import com.example.castillogym.R;
 import com.example.castillogym.UI.ViewItems.UsuariosActivity;
+import com.example.castillogym.databinding.ActivityAgregarUsuarioBinding;
+import com.example.castillogym.databinding.UsuariosBinding;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,9 +26,7 @@ import java.util.UUID;
 
 public class AgregarUsuarioActivity extends AppCompatActivity {
 
-    ImageButton btn_agregar;
-    EditText et_nombre_completo, et_edad, et_telefono;
-    Spinner spinner_membresia;
+    private ActivityAgregarUsuarioBinding binding;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -31,14 +34,19 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_usuario);
+        binding = ActivityAgregarUsuarioBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        btn_agregar = findViewById(R.id.btn_agregar);
-        et_nombre_completo = findViewById(R.id.et_nombre_completo);
-        et_edad = findViewById(R.id.et_edad);
-        et_telefono = findViewById(R.id.et_telefono);
-        spinner_membresia = findViewById(R.id.spinner_membresia);
+        // Inicair la BD con firebase
+        inicializarFirebase();
+        spinner();
 
+        binding.btnAgregar.setOnClickListener(v -> {
+            agregarUsuario();
+        });
+    }
+
+    private void spinner() {
         // Creando un ArrayAdapter usando la matriz de cadenas y un diseño spinner predeterminado
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.membresia, android.R.layout.simple_spinner_item);
@@ -47,15 +55,7 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Aplicar el adaptador al spinner
-        spinner_membresia.setAdapter(adapter);
-
-
-        // Inicair la BD con firebase
-        inicializarFirebase();
-
-        btn_agregar.setOnClickListener(v -> {
-            agregarUsuario();
-        });
+        binding.spinnerMembresia.setAdapter(adapter);
     }
 
     private void inicializarFirebase() {
@@ -67,10 +67,10 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
 
     private void agregarUsuario() {
         // Se obtiene tod0 lo de EditText pero al final el set es directo con EditText
-        String nombreC = et_nombre_completo.getText().toString();
-        String edad = et_edad.getText().toString();
-        String telefono = et_telefono.getText().toString();
-        String spinnerM = spinner_membresia.getSelectedItem().toString();
+        String nombreC = binding.etNombreCompleto.getText().toString();
+        String edad = binding.etEdad.getText().toString();
+        String telefono = binding.etTelefono.getText().toString();
+        String spinnerM = binding.spinnerMembresia.getSelectedItem().toString();
 
         if(nombreC.equals("") || edad.equals("") || telefono.equals("") || spinnerM.equals(getString(R.string.tipo_membresia))){
             validacion();
@@ -93,29 +93,29 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
 
     private void validacion() {
         // Se obtiene tod0 lo de EditText pero al final el set es directo con EditText
-        String nombreC = et_nombre_completo.getText().toString();
-        String edad = et_edad.getText().toString();
-        String telefono = et_telefono.getText().toString();
-        String spinnerM = spinner_membresia.getSelectedItem().toString();
+        String nombreC = binding.etNombreCompleto.getText().toString();
+        String edad = binding.etEdad.getText().toString();
+        String telefono = binding.etTelefono.getText().toString();
+        String spinnerM = binding.spinnerMembresia.getSelectedItem().toString();
 
         if(nombreC.equals("")){
-            et_nombre_completo.setError(getString(R.string.requerido));
-            et_nombre_completo.requestFocus();
+            binding.etNombreCompleto.setError(getString(R.string.requerido));
+            binding.etNombreCompleto.requestFocus();
         } else if(edad.equals("")){
-            et_edad.setError(getString(R.string.requerido));
-            et_edad.requestFocus();
+            binding.etEdad.setError(getString(R.string.requerido));
+            binding.etEdad.requestFocus();
         } else if(telefono.equals("")){
-            et_telefono.setError(getString(R.string.requerido));
-            et_telefono.requestFocus();
+            binding.etTelefono.setError(getString(R.string.requerido));
+            binding.etTelefono.requestFocus();
         } else if(spinnerM.equals(getString(R.string.tipo_membresia))){
             Toast.makeText(this,getString(R.string.tipo_membresia), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void limpiarCajas() {
-        et_nombre_completo.setText("");
-        et_edad.setText("");
-        et_telefono.setText("");
-        spinner_membresia.setSelection(0);
+        binding.etNombreCompleto.setText("");
+        binding.etEdad.setText("");
+        binding.etTelefono.setText("");
+        binding.spinnerMembresia.setSelection(0);
     }
 }

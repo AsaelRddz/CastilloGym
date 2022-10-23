@@ -13,17 +13,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/menu" />
 
-    <ListView
-        android:id="@+id/list_view_personas"
-        android:layout_width="0dp"
-        android:layout_height="418dp"
-        android:layout_margin="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:listitem="@layout/item_usuario" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -50,5 +39,16 @@
         android:backgroundTint="@color/principal"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userList"
+        android:layout_width="345dp"
+        android:layout_height="367dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:listitem="@layout/item_usuario"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

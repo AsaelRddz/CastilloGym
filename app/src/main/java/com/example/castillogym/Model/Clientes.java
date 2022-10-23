@@ -1,15 +1,29 @@
 package com.example.castillogym.Model;
 
+import android.widget.ImageView;
+
+import java.io.Serializable;
+
+// Serializable para pasar mas facil los objetos entre las Activities
 public class Clientes {
 
     private String uid, nombreCompleto, telefono, edad, spinnerM;
+    private ImageView imagen;
 
-    public Clientes(){
-        this.uid = uid;
-        this.nombreCompleto = nombreCompleto;
-        this.telefono = telefono;
-        this.edad = edad;
+    public String getSpinnerM() {
+        return spinnerM;
+    }
+
+    public void setSpinnerM(String spinnerM) {
         this.spinnerM = spinnerM;
+    }
+
+    public ImageView getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(ImageView imagen) {
+        this.imagen = imagen;
     }
 
     public String getUid() {

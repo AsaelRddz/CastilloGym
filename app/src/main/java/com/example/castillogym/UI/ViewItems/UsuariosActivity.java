@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -11,6 +12,8 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.castillogym.MenuInicial;
 import com.example.castillogym.Model.Clientes;
@@ -18,6 +21,8 @@ import com.example.castillogym.R;
 import com.example.castillogym.UI.AddItems.AgregarUsuarioActivity;
 import com.example.castillogym.UI.AddItems.EditarUsuario;
 import com.example.castillogym.UI.Settings.Configuracion;
+import com.example.castillogym.UserAdapter;
+import com.example.castillogym.databinding.UsuariosBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -31,30 +36,27 @@ import java.util.List;
 
 public class UsuariosActivity extends AppCompatActivity {
 
-    private List<Clientes> listaClientes = new ArrayList<Clientes>();
-    ArrayAdapter<Clientes> arrayAdapterClientes;
+    private UsuariosBinding binding;
+    // private List<Clientes> listaClientes = new ArrayList<Clientes>();
+    ArrayList<Clientes> list;
+    UserAdapter userAdapter;
 
-    ListView list_view_personas;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
-
     Clientes clientesSeleccionado;
-    ImageView btn_agregar_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.usuarios);
-
-        list_view_personas = findViewById(R.id.list_view_personas);
-        btn_agregar_usuario = findViewById(R.id.btn_agregar_usuario);
+        binding = UsuariosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         inicializarFirebase();
         listaDatos();
 
         // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
-        list_view_personas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        /*binding.listViewPersonas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 clientesSeleccionado = (Clientes) adapterView.getItemAtPosition(i);
@@ -75,10 +77,10 @@ public class UsuariosActivity extends AppCompatActivity {
                 intent.putExtra("edad",clientesSeleccionado.getEdad());
                 intent.putExtra("membresia",tipo_membresia);
                 startActivity(intent);
-            }
-        });
 
-        btn_agregar_usuario.setOnClickListener(v -> {
+        });*/
+
+        binding.btnAgregarUsuario.setOnClickListener(v -> {
             Intent i = new Intent(this, AgregarUsuarioActivity.class);
             startActivity(i);
         });
@@ -86,6 +88,7 @@ public class UsuariosActivity extends AppCompatActivity {
         botones();
     }
 
+    // Navegacion
     private void botones() {
         //inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -124,19 +127,44 @@ public class UsuariosActivity extends AppCompatActivity {
     }
 
     private void listaDatos() {
-        databaseReference.child("Clientes").addValueEventListener(new ValueEventListener() {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Clientes");
+        binding.userList.setLayoutManager(new LinearLayoutManager(this));
+        binding.userList.setHasFixedSize(true);
+
+        list = new ArrayList<>();
+        userAdapter = new UserAdapter(this, list, new UserAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Clientes item) {
+                int tipo_membresia;
+
+                if(item.getTipo_membresia().equals("Mensual")){
+                    tipo_membresia = 1;
+                } else {
+                    tipo_membresia = 2;
+                }
+
+                // Mandamos los datos extraidos del objeto seleccionado con uso del intent
+                Intent intent = new Intent(getApplicationContext(), EditarUsuario.class);
+                intent.putExtra("uid",item.getUid());
+                intent.putExtra("nombreC",item.getNombreCompleto());
+                intent.putExtra("telefono",item.getTelefono());
+                intent.putExtra("edad",item.getEdad());
+                intent.putExtra("membresia",tipo_membresia);
+                startActivity(intent);
+            }
+        });
+        binding.userList.setAdapter(userAdapter);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                listaClientes.clear();
 
-                for (DataSnapshot objSnaptshot : snapshot.getChildren()){
-                    Clientes c = objSnaptshot.getValue(Clientes.class);
-
-                    listaClientes.add(c);
-
-                    arrayAdapterClientes = new ArrayAdapter<Clientes>(UsuariosActivity.this, android.R.layout.simple_list_item_1, listaClientes);
-                    list_view_personas.setAdapter(arrayAdapterClientes);
+                for (DataSnapshot  dataSnapshot : snapshot.getChildren()){
+                    Clientes clientes = dataSnapshot.getValue(Clientes.class);
+                    list.add(clientes);
                 }
+
+                userAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -144,11 +172,12 @@ public class UsuariosActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(this);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference= firebaseDatabase.getReference();
+        //FirebaseApp.initializeApp(this);
+        //firebaseDatabase = FirebaseDatabase.getInstance();
+        //databaseReference= firebaseDatabase.getReference();
     }
 }

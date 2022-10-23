@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/et_nombre_completo"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
@@ -53,49 +53,47 @@
         tools:ignore="TouchTargetSizeCheck" />
 
 
-    <LinearLayout
-        android:id="@+id/linearTelefonos"
-        android:layout_width="349dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="18dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_edad">
-
-        <EditText
-            android:id="@+id/et_telefono"
-            android:layout_width="wrap_content"
-            android:layout_height="53dp"
-            android:background="@drawable/imput"
-            android:ems="10"
-            android:hint="Telefono"
-            android:inputType="number"
-            android:paddingLeft="10sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/btn_notificar"
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/notificar"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-    </LinearLayout>
-
     <Spinner
         android:id="@+id/spinner_membresia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="60dp"
-        android:layout_marginTop="24dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearTelefonos"
+        app:layout_constraintTop_toBottomOf="@+id/et_telefono"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_telefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:background="@drawable/imput"
+        android:ems="10"
+        android:hint="Telefono"
+        android:inputType="number"
+        android:paddingLeft="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_edad"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_notificar"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="22dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_edad"
+        app:layout_constraintStart_toEndOf="@+id/et_telefono"
+        app:layout_constraintTop_toBottomOf="@+id/et_edad"
+        app:srcCompat="@drawable/notificar"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView4"
