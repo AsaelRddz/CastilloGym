@@ -32,14 +32,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <ListView
-        android:layout_width="348dp"
-        android:layout_height="307dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reportesList"
+        android:layout_width="345dp"
+        android:layout_height="367dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
         tools:listitem="@layout/item_reportes" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

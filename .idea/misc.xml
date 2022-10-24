@@ -22,16 +22,18 @@
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_menu_inicial.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_registrar.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_reportar.xml" value="0.209375" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_reporte_de_ventas.xml" value="0.25" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/activity_reporte_de_ventas.xml" value="0.33" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/example_ventas.xml" value="0.209375" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_inventario.xml" value="0.33" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_reportes.xml" value="0.209375" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_reportes.xml" value="0.19469026548672566" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_usuario.xml" value="0.5" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/item_venta_diaria.xml" value="0.12359550561797752" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/reportes.xml" value="0.25" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/usuarios.xml" value="0.28762541806020064" />
-        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/venta.xml" value="0.25" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/usuarios.xml" value="0.1685823754789272" />
+        <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/venta.xml" value="0.33" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/layout/venta_y_reportes.xml" value="0.25" />
         <entry key="..\:/Users/RODRIGUEZ/AndroidStudioProjects/CastilloGym/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/RODRIGUEZ/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.209375" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_configuracion.xml" value="0.17527173913043478" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_cuenta.xml" value="0.17527173913043478" />
         <entry key="..\:/Users/melia/AndroidStudioProjects/CastilloGym_Final/CastilloGym/app/src/main/res/layout/activity_editar_usuario.xml" value="0.33" />

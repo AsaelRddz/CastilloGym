@@ -49,14 +49,13 @@ public class Inventario extends AppCompatActivity {
         binding = ActivityInventarioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        listaDatos();
-
         binding.btnAgregarProducto.setOnClickListener(v -> {
             Intent i = new Intent(this, AgregarProducto.class);
             startActivity(i);
         });
 
         botones();
+        listaDatos();
     }
 
     private void botones() {

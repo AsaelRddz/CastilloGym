@@ -21,43 +21,36 @@ public class VentaYReportesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.venta_y_reportes);
-//inicializamos variables
+        //inicializamos variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.inventarios);
 
         //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()) {
+                case R.id.home:
+                    startActivity(new Intent(getApplicationContext(),
+                            MenuInicial.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.ajustes:
+                    startActivity(new Intent(getApplicationContext(),
+                            Configuracion.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                case R.id.inventarios:
 
-        {
-
-
-            @Override
-            public boolean onNavigationItemSelected (@NonNull MenuItem menuItem){
-                switch (menuItem.getItemId()) {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),
-                                MenuInicial.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.ajustes:
-                        startActivity(new Intent(getApplicationContext(),
-                                Configuracion.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.inventarios:
-
-                        return true;
-                    case R.id.clientes:
-                        startActivity(new Intent(getApplicationContext(),
-                                UsuariosActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                }
-
-                return false;
+                    return true;
+                case R.id.clientes:
+                    startActivity(new Intent(getApplicationContext(),
+                            UsuariosActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
             }
+
+            return false;
         });
 
     }
