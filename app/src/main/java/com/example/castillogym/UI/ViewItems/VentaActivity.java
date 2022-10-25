@@ -100,7 +100,6 @@ public class VentaActivity extends AppCompatActivity {
                 for (DataSnapshot  dataSnapshot : snapshot.getChildren()){
                     Productos productos = dataSnapshot.getValue(Productos.class);
                     list.add(productos);
-
                 }
 
                 productosAdapter.notifyDataSetChanged();
