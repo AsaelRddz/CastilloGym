@@ -55,27 +55,10 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.MyVi
         holder.imagen.setImageResource(R.drawable.productimage);
         holder.binData(list.get(position));
 
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(context, R.array.stockVenta, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        holder.spinner.setAdapter(adapter2);
-
         // Saber en que activity se encuentra actualmente
-        if(context instanceof VentaActivity){
-            holder.spinner.setVisibility(View.VISIBLE);
-
-            holder.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        }
+        //if(context instanceof VentaActivity){
+        //    holder.spinner.setVisibility(View.VISIBLE);
+        //}
     }
 
     @Override
@@ -87,8 +70,6 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.MyVi
 
         ImageView imagen;
         TextView tvPrecio, tvNombre, tvCantidad;
-        Spinner spinner;
-        Button btn_Guardar;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -97,8 +78,6 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.MyVi
             tvPrecio = itemView.findViewById(R.id.tvPrecio);
             tvNombre = itemView.findViewById(R.id.tvNombre);
             tvCantidad = itemView.findViewById(R.id.tvCantidad);
-            spinner = itemView.findViewById(R.id.spinner);
-            btn_Guardar = itemView.findViewById(R.id.btn_agregar);
         }
 
         void binData(final Productos item){

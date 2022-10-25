@@ -57,10 +57,7 @@ public class ReportesAdapter extends RecyclerView.Adapter<ReportesAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         list.get(position);
 
-        DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, yyyy '@' HH:mm:ss");
-        String date = dateFormat.format(Calendar.getInstance().getTime());
-
-        holder.tvfecha.setText(date);
+        holder.tvfecha.setText(list.get(position).getFecha());
         holder.binData(list.get(position));
     }
 

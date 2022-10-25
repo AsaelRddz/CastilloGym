@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.castillogym.Adapter.ProductosAdapter;
 import com.example.castillogym.Model.Productos;
 import com.example.castillogym.R;
+import com.example.castillogym.UI.Reportes.RegistrarVentaActivity;
 import com.example.castillogym.UI.Settings.Configuracion;
 import com.example.castillogym.databinding.VentaBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,43 +35,6 @@ public class VentaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = VentaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        //inicializamos variables
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        //Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
-        //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
-            switch (menuItem.getItemId()) {
-                case R.id.home:
-
-                    return true;
-                case R.id.ajustes:
-                    startActivity(new Intent(getApplicationContext(),
-                            Configuracion.class));
-                    overridePendingTransition(0, 0);
-                    return true;
-                case R.id.inventarios:
-                    startActivity(new Intent(getApplicationContext(),
-                            Inventario.class));
-                    overridePendingTransition(0, 0);
-                    return true;
-                case R.id.clientes:
-                    startActivity(new Intent(getApplicationContext(),
-                            UsuariosActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
-            }
-
-            return false;
-        });
-
-        binding.btnGuardar.setOnClickListener(v -> {
-
-        //    guardarVenta(binding.spinnerMedicina, binding.spinnerQuemadores);
-        });
 
         listaDatos();
     }
@@ -119,7 +83,13 @@ public class VentaActivity extends AppCompatActivity {
 
         // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
         productosAdapter = new ProductosAdapter(this, list, item -> {
-
+            // Mandamos los datos extraidos del objeto seleccionado con uso del intent
+            Intent intent = new Intent(getApplicationContext(), RegistrarVentaActivity.class);
+            intent.putExtra("uid",item.getUid());
+            intent.putExtra("nombre",item.getNombreProducto());
+            intent.putExtra("precio",item.getPrecioProducto());
+            intent.putExtra("cantidad",item.getCantidadProducto());
+            startActivity(intent);
         });
         binding.inventarioList.setAdapter(productosAdapter);
 

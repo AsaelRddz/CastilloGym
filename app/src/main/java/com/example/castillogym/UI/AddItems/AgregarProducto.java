@@ -19,7 +19,6 @@ import java.util.UUID;
 
 public class AgregarProducto extends AppCompatActivity {
 
-
     Button btn_agregar_producto;
     EditText txtProducto, txtPrecio, txtCantidad;
 
@@ -67,7 +66,6 @@ public class AgregarProducto extends AppCompatActivity {
             p.setNombreProducto(nombreP);
             p.setPrecioProducto(precioP);
             p.setCantidadProducto(cantidadP);
-
 
             // Crear un nodo con los datos en firebase
             databaseReference.child("Productos").child(p.getUid()).setValue(p);

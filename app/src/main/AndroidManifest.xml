@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.castillogym">
-    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:name=".Model.MyFirebaseApp"
         android:allowBackup="true"
@@ -10,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CastilloGym">
+        <activity
+            android:name=".UI.Reportes.RegistrarVentaActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.Settings.Informacion"
             android:exported="true" />
@@ -52,15 +57,20 @@
         <activity
             android:name=".UI.Reportes.ReportesActivity"
             android:exported="true" />
-        <activity android:name=".UI.AddItems.EditarProducto"
+        <activity
+            android:name=".UI.AddItems.EditarProducto"
             android:exported="true" />
-        <activity android:name=".UI.AddItems.AgregarProducto"
+        <activity
+            android:name=".UI.AddItems.AgregarProducto"
             android:exported="true" />
-        <activity android:name=".UI.Reportes.ReporteDeVentas"
+        <activity
+            android:name=".UI.Reportes.ReporteDeVentas"
             android:exported="true" />
-        <activity android:name=".UI.AddItems.EditarUsuario"
+        <activity
+            android:name=".UI.AddItems.EditarUsuario"
             android:exported="true" />
-        <activity android:name=".UI.AddItems.EditarVentas"
+        <activity
+            android:name=".UI.AddItems.EditarVentas"
             android:exported="true" />
         <activity
             android:name=".MenuInicial"
@@ -72,4 +82,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

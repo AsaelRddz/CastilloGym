@@ -1,6 +1,8 @@
 package com.example.castillogym.UI.Reportes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import com.example.castillogym.Adapter.ProductosAdapter;
 import com.example.castillogym.Adapter.ReportesAdapter;
 import com.example.castillogym.Model.Productos;
 import com.example.castillogym.R;
+import com.example.castillogym.UI.AddItems.EditarUsuario;
+import com.example.castillogym.UI.ViewItems.VentaActivity;
 import com.example.castillogym.databinding.ReportesBinding;
 import com.example.castillogym.databinding.VentaBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -35,10 +39,14 @@ public class ReportesActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         listaDatos();
+
+        binding.btnAgregarReporte.setOnClickListener(v -> {
+            startActivity(new Intent(this, VentaActivity.class));
+        });
     }
 
     private void listaDatos() {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Productos");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Venta");
         binding.reportesList.setLayoutManager(new LinearLayoutManager(this));
         binding.reportesList.setHasFixedSize(true);
 
@@ -46,7 +54,14 @@ public class ReportesActivity extends AppCompatActivity {
 
         // Al hacer click a un objeto de la listView se mandara a la clase Editar Usuario
         reportesAdapter = new ReportesAdapter(this, list, item -> {
-
+            // Mandamos los datos extraidos del objeto seleccionado con uso del intent
+            Intent intent = new Intent(getApplicationContext(), ReporteDeVentas.class);
+            intent.putExtra("uid",item.getUid());
+            intent.putExtra("nombre",item.getNombreProducto());
+            intent.putExtra("cantidad",item.getCantidadProducto());
+            intent.putExtra("totalVenta",item.getTotalVenta());
+            intent.putExtra("fecha",item.getFecha());
+            startActivity(intent);
         });
         binding.reportesList.setAdapter(reportesAdapter);
 
@@ -57,7 +72,6 @@ public class ReportesActivity extends AppCompatActivity {
                 for (DataSnapshot  dataSnapshot : snapshot.getChildren()){
                     Productos productos = dataSnapshot.getValue(Productos.class);
                     list.add(productos);
-
                 }
 
                 reportesAdapter.notifyDataSetChanged();

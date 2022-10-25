@@ -2,14 +2,22 @@ package com.example.castillogym.Model;
 
 public class Productos {
 
-    private String uid, nombreProducto, precioProducto, cantidadProducto, fecha;
-    private int cantidadVenta;
+    private String uid, nombreProducto, precioProducto, cantidadProducto, fecha, cantidadVenta;
+    private float totalVenta;
 
-    public int getCantidadVenta() {
+    public float getTotalVenta() {
+        return totalVenta;
+    }
+
+    public void setTotalVenta(float totalVenta) {
+        this.totalVenta = totalVenta;
+    }
+
+    public String getCantidadVenta() {
         return cantidadVenta;
     }
 
-    public void setCantidadVenta(int cantidadVenta) {
+    public void setCantidadVenta(String cantidadVenta) {
         this.cantidadVenta = cantidadVenta;
     }
 
