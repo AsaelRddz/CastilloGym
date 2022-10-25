@@ -58,7 +58,7 @@ public class ReportesActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), ReporteDeVentas.class);
             intent.putExtra("uid",item.getUid());
             intent.putExtra("nombre",item.getNombreProducto());
-            intent.putExtra("cantidad",item.getCantidadProducto());
+            intent.putExtra("cantidad",item.getCantidadVenta());
             intent.putExtra("totalVenta",item.getTotalVenta());
             intent.putExtra("fecha",item.getFecha());
             startActivity(intent);
