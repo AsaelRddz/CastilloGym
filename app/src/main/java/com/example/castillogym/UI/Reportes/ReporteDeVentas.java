@@ -84,7 +84,7 @@ public class ReporteDeVentas extends AppCompatActivity {
 
     private void accionAlBorrar() {
         Toast.makeText(this, getString(R.string.product_delete_success), Toast.LENGTH_SHORT).show();
-        Intent ua = new Intent(this, ReportesActivity.class);
+        Intent ua = new Intent(this, VentaYReportesActivity.class);
         startActivity(ua);
     }
 }

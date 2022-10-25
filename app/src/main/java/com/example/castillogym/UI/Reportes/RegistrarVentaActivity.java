@@ -74,12 +74,13 @@ public class RegistrarVentaActivity extends AppCompatActivity {
         } else if (Integer.parseInt(binding.spinnerVenta.getSelectedItem().toString()) > cantidad1){
             Toast.makeText(this, "ERROR, revise el stock",Toast.LENGTH_SHORT).show();
         } else {
+            int nuevaCantidad = cantidad1 - Integer.parseInt(binding.spinnerVenta.getSelectedItem().toString());
+
             // obtenemos el precio quitando el "$"
             StringBuilder precio = new StringBuilder(binding.txtPrecio.getText().toString());
             precio.deleteCharAt(0);
 
             float total = (Float.parseFloat(String.valueOf(precio)) * Float.parseFloat(binding.spinnerVenta.getSelectedItem().toString()));
-            Toast.makeText(this,""+total, Toast.LENGTH_SHORT).show();
 
             // obtenemos la fecha actual
             DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, yyyy / HH:mm:ss");
@@ -95,11 +96,16 @@ public class RegistrarVentaActivity extends AppCompatActivity {
             databaseReference.child("Venta").child(p.getUid()).setValue(p);
 
             // Resta la cantidad que se selecciona con la de stock
-            //int nuevaCantidad = cantidad1 - 2;
 
-            //databaseReference.child("Productos").child(uid).child("cantidadProducto").setValue(nuevaCantidad);
+            Productos p1 = new Productos();
+            p1.setUid(uid);
+            p1.setNombreProducto(binding.txtProducto.getText().toString());
+            p1.setPrecioProducto(String.valueOf(precio));
+            p1.setCantidadProducto(String.valueOf(nuevaCantidad));
 
-            startActivity(new Intent(this, ReportesActivity.class));
+            databaseReference.child("Productos").child(uid).setValue(p1);
+
+            startActivity(new Intent(this, VentaYReportesActivity.class));
         }
     }
 
