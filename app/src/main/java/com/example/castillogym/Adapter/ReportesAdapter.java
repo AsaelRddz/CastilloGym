@@ -36,6 +36,10 @@ public class ReportesAdapter extends RecyclerView.Adapter<ReportesAdapter.MyView
     ArrayList<Productos> list;
     final ReportesAdapter.OnItemClickListener listener;
 
+    public void setFiltered(ArrayList<Productos> filteredList){
+        list = filteredList;
+    }
+
     public interface OnItemClickListener {
         void onItemClick(Productos item);
     }

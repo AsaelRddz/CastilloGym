@@ -3,6 +3,8 @@ package com.example.castillogym.UI.Reportes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReportesActivity extends AppCompatActivity {
 
@@ -38,11 +41,43 @@ public class ReportesActivity extends AppCompatActivity {
         binding = ReportesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.searchView.clearFocus();
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterfirst(newText);
+                return true;
+            }
+        });
+
         listaDatos();
 
         binding.btnAgregarReporte.setOnClickListener(v -> {
             startActivity(new Intent(this, VentaActivity.class));
         });
+    }
+
+    private void filterfirst(String newText) {
+        ArrayList<Productos> filteredList = new ArrayList<>();
+
+        for (Productos productos : list){
+            if (productos.getFecha().toLowerCase().contains(newText.toLowerCase())){
+                filteredList.add(productos);
+            }
+
+            if (filteredList.isEmpty()){
+                Toast.makeText(this, "No se encontro nada", Toast.LENGTH_SHORT).show();
+            } else {
+                reportesAdapter.setFiltered(filteredList);
+            }
+        }
+
+
     }
 
     private void listaDatos() {

@@ -21,6 +21,7 @@ import com.example.castillogym.R;
 import com.example.castillogym.UI.ViewItems.VentaActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.MyViewHolder> {
 
