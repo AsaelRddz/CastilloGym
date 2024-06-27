@@ -2,8 +2,6 @@ package com.example.castillogym.Model;
 
 import android.widget.ImageView;
 
-import java.io.Serializable;
-
 // Serializable para pasar mas facil los objetos entre las Activities
 public class Clientes {
 
