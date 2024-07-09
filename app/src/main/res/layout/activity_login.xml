@@ -63,11 +63,6 @@
                 android:textColorHighlight="@color/principal"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="28dp" />
-
         <TextView
             android:id="@+id/forgot"
             android:layout_width="match_parent"
@@ -76,37 +71,38 @@
             android:text="Olvidé mi contraseña"
             android:textColor="#F88702"
             android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="14dp" />
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="12dp"/>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:backgroundTint="@color/black"
             android:gravity="center"
+            app:cornerRadius="48dp"
             android:text="Iniciar Sesión"
             android:textAllCaps="false"
             android:textStyle="normal|bold"
-            app:backgroundTint="#000000" />
+            android:padding="12dp"/>
 
-        <Space
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            android:layout_height="wrap_content"
+            android:text="¿No tienes cuenta?"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="26dp"/>
 
         <TextView
             android:id="@+id/go_registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:paddingRight="15sp"
+            android:gravity="center"
             android:text="Registrarte"
             android:textColor="#F88702"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
