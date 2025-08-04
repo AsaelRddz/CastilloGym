@@ -51,10 +51,8 @@ public class Registrar extends AppCompatActivity {
     //Método para que al presionar sobre la opción se comience con el método de crear cuenta
 
     public void onClick(View view){
-        switch (view.getId()){
-            case R.id.go_registrar:
-                CreateAccount();
-                break;
+        if (view.getId() == R.id.go_registrar) {
+            CreateAccount();
         }
     }
 

@@ -59,7 +59,7 @@ public class AgregarUsuarioActivity extends AppCompatActivity {
     }
 
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(this);
+        //FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         // firebaseDatabase.setPersistenceEnabled(true);
         databaseReference= firebaseDatabase.getReference();

@@ -71,25 +71,22 @@ public class Inventario extends AppCompatActivity {
         {
             @Override
             public boolean onNavigationItemSelected (@NonNull MenuItem menuItem){
-                switch (menuItem.getItemId()) {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),
-                                MenuInicial.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.ajustes:
-                        startActivity(new Intent(getApplicationContext(),
-                                Configuracion.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.inventarios:
+                int id = menuItem.getItemId();
 
-                        return true;
-                    case R.id.clientes:
-                        startActivity(new Intent(getApplicationContext(),
-                                UsuariosActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+                if (id == R.id.home) {
+                    startActivity(new Intent(getApplicationContext(), MenuInicial.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } else if (id == R.id.ajustes) {
+                    startActivity(new Intent(getApplicationContext(), Configuracion.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } else if (id == R.id.inventarios) {
+                    return true;
+                } else if (id == R.id.clientes) {
+                    startActivity(new Intent(getApplicationContext(), UsuariosActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
                 }
 
                 return false;

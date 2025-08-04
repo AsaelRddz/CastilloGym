@@ -1,8 +1,9 @@
 {
   "project_info": {
     "project_number": "917835646521",
+    "firebase_url": "https://castillogym-38dd9-default-rtdb.firebaseio.com",
     "project_id": "castillogym-38dd9",
-    "storage_bucket": "castillogym-38dd9.appspot.com"
+    "storage_bucket": "castillogym-38dd9.firebasestorage.app"
   },
   "client": [
     {
@@ -12,12 +13,7 @@
           "package_name": "com.example.castillogym"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "917835646521-vs7i23cuk0gqrc335vf0o31q7a0q8ta3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyDj0CnPg-QOcFr_jIg15Kbulm8EKvJ6W4I"
@@ -25,12 +21,7 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "917835646521-vs7i23cuk0gqrc335vf0o31q7a0q8ta3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

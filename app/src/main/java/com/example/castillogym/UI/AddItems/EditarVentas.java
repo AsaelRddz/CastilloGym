@@ -11,6 +11,7 @@ import com.example.castillogym.UI.ViewItems.Inventario;
 import com.example.castillogym.MenuInicial;
 import com.example.castillogym.R;
 import com.example.castillogym.UI.Settings.Configuracion;
+import com.example.castillogym.UI.ViewItems.UsuariosActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class EditarVentas extends AppCompatActivity {
@@ -32,28 +33,21 @@ public class EditarVentas extends AppCompatActivity {
         {
             @Override
             public boolean onNavigationItemSelected (@NonNull MenuItem menuItem){
-                switch (menuItem.getItemId()) {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),
-                                MenuInicial.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.ajustes:
-                        startActivity(new Intent(getApplicationContext(),
-                                Configuracion.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.inventarios:
-                        startActivity(new Intent(getApplicationContext(),
-                                Inventario.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.clientes:
+                int id = menuItem.getItemId();
 
-                        return true;
-                }
-
-                return false;
+                if (id == R.id.home) {
+                    startActivity(new Intent(getApplicationContext(), MenuInicial.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } else if (id == R.id.ajustes) {
+                    startActivity(new Intent(getApplicationContext(), Configuracion.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } else if (id == R.id.inventarios) {
+                    startActivity(new Intent(getApplicationContext(), Inventario.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                } else return id == R.id.clientes;
             }
         });
     }

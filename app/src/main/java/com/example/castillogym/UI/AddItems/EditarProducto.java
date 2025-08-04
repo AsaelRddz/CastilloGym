@@ -89,7 +89,7 @@ public class EditarProducto extends AppCompatActivity {
     }
 
     private void iniciarFirebase() {
-        FirebaseApp.initializeApp(this);
+        //FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference();
     }
